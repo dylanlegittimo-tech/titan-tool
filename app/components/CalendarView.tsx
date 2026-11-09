@@ -35,7 +35,7 @@ export default function CalendarView({ shifts }: CalendarViewProps) {
 
   const daysInMonth = lastDayOfMonth.getDate()
 
-  const daysArray = []
+  const daysArray: (Date | null)[] = []
   for (let i = 0; i < startingDayOfWeek; i++) {
     daysArray.push(null)
   }
@@ -78,7 +78,7 @@ export default function CalendarView({ shifts }: CalendarViewProps) {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '1px', backgroundColor: '#e4e4e7', border: '1px solid #e4e4e7' }}>
         {daysArray.map((date, idx) => {
           if (!date) {
-            return <div key={empty-${idx}} style={{ backgroundColor: '#f4f4f5', minHeight: '110px' }} />
+            return <div key={'empty-' + idx} style={{ backgroundColor: '#f4f4f5', minHeight: '110px' }} />
           }
 
           const isToday = new Date().toDateString() === date.toDateString()
