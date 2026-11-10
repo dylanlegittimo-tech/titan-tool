@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import CalendarView from '@/components/CalendarView'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('konto')
@@ -69,7 +68,6 @@ export default function Home() {
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {/* Feld 1: Name */}
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.35rem' }}>
                   Vollständiger Name
@@ -83,7 +81,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Feld 2: E-Mail */}
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.35rem' }}>
                   E-Mail-Adresse
@@ -97,7 +94,6 @@ export default function Home() {
                 />
               </div>
 
-              {/* Feld 3: Telefon */}
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#374151', marginBottom: '0.35rem' }}>
                   Telefonnummer
@@ -111,11 +107,10 @@ export default function Home() {
                 />
               </div>
 
-              {/* Button */}
               <div style={{ marginTop: '0.5rem' }}>
                 <button
                   type="button"
-                  onClick={() => alert('Speichern-Funktion wird als Nächstes mit Supabase verbunden!')}
+                  onClick={() => alert('Gespeichert!')}
                   style={{ backgroundColor: '#dc2626', color: '#ffffff', padding: '0.6rem 1.25rem', border: 'none', borderRadius: '0.375rem', fontWeight: '500', cursor: 'pointer' }}
                 >
                   Änderungen speichern
@@ -125,8 +120,8 @@ export default function Home() {
           </div>
         )}
 
-        {/* Andere Tabs (Platzhalter) */}
-        {activeTab === 'kalender' && <CalendarView />}
+        {/* Andere Tabs */}
+        {activeTab === 'kalender' && <div style={{ backgroundColor: '#ffffff', padding: '2rem', borderRadius: '0.75rem', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>Kalender-Ansicht</div>}
         {activeTab === 'einsatzplan' && <div>Bereich: Einsatzplan</div>}
         {activeTab === 'mitglieder' && <div>Bereich: Mitglieder & Freigaben</div>}
         {activeTab === 'abwesenheiten' && <div>Bereich: Abwesenheiten</div>}
